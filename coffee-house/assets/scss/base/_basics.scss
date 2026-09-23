@@ -1,0 +1,19 @@
+@use '../abstracts/index' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: 150%;
+    color: $text-primary;
+}
+
+.container {
+    width: rem(1440px);
+    padding: 0 rem(40px);
+    margin: 0 auto;
+}

@@ -1,0 +1,95 @@
+@use '../abstracts/' as *;
+
+.header {
+    display: flex;
+    background-color: $text-inverse;
+    padding: rem(20px) 0;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__list {
+    @extend %reset-ul-styles;
+    display: flex;
+    align-items: center;
+    padding-right: rem(44px);
+    gap: rem(42px);
+
+    .nav__link {
+        @extend %reset-link-styles;
+        @extend %link-button-styles;
+        border-bottom: rem(2px) solid transparent;
+        transition: $hover-time;
+        padding-bottom: rem(2px);
+
+        @media (pointer: fine) and (hover: hover) {
+            &:hover {
+                border-color: $text-primary;
+            }
+        }
+    }
+}
+
+.header__block {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+}
+
+.header__menu-link {
+    @extend %reset-link-styles;
+    @extend %link-button-styles;
+    width: fit-content;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(8px);
+    border-bottom: rem(2px) solid transparent;
+    transition: $hover-time;
+
+    @media (pointer: fine) and (hover: hover) {
+        &:hover {
+            border-color: $text-primary;
+        }
+    }
+}
+
+.header__theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    border: rem(1px) solid $border-primary;
+    border-radius: rem(100px);
+    transition: $hover-time;
+    padding: rem(4px);
+
+    input {
+        display: none;
+    }
+
+    svg {
+        transition: $hover-time;
+        border-radius: 100%;
+    }
+
+    path {
+        transition: $hover-time;
+    }
+
+    @media (pointer: fine) and (hover: hover) {
+        &:hover {
+
+            svg.night-mode {
+                cursor: pointer;
+                background-color: $dark-border-primary;
+
+                path {
+                    fill: $text-inverse;
+                }
+            }
+        }
+    }
+}
