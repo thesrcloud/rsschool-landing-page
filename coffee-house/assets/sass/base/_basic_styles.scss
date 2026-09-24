@@ -6,14 +6,33 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+    --color-text-dark: #{$color-text-dark};
+    --color-text-light: #{$color-text-light};
+    --color-text-accent: #{$color-text-accent};
+    --color-buttons-default: #{$color-buttons-default};
+    --color-buttons-border: #{$color-buttons-border};
+    --bg-page: #{$bg-page};
+    --bg-container: #{$bg-container};
+}
+
+body:has(#tb__switcher:checked) {
+    --color-text-dark: #{$dark-text-primary};
+    --color-text-light: #{$dark-text-inverse};
+    --color-text-accent: #{$dark-text-accent};
+    --color-buttons-default: #{$dark-border-inverse};
+    --color-buttons-border: #{$dark-border-primary};
+    --bg-page: #{$dark-bg-page};
+    --bg-container: #{$dark-bg-container};
+    transition: $animation-time-images;
 }
 
 body {
-    background-color: #E1D4C9;
+    background-color: var(--bg-page);
     font-family: $font-group-1;
-    color: $color-text-dark;
+    color: var(--color-text-dark);
     overflow-x: hidden;
 }
+
 
 a {
     text-decoration: none;
@@ -29,9 +48,9 @@ a {
     @extend %font-property-links;
     width: fit-content;
     display: block;
-    background-color: $color-text-light;
+    background-color: var(--color-text-light);
     border-radius: rem(100px);
-    color: $color-text-dark;
+    color: var(--color-text-dark);
     padding: rem(20px) rem(93px) rem(20px) rem(64px);
     transition: 0.3s;
     position: relative;
@@ -56,18 +75,24 @@ a {
     }
 }
 
+body:has(#tb__switcher:checked) {
+   .btn-primary {
+    color: var(--bg-page);
+   }
+}
+
 .title-h1 {
     font-size: rem(72px);
     font-style: normal;
     font-weight: 600;
     line-height: 105%;
-    color: $color-text-light;
+    color: var(--color-text-light);
     margin: 0;
 
     span {
         font-family: inherit;
         font-style: italic;
-        color: $color-text-accent;
+        color: var(--color-text-accent);
     }
 }
 
@@ -76,11 +101,11 @@ a {
     width: fit-content;
     font-size: rem(60px);
     line-height: 125%;
-    color: $color-text-dark;
+    color: var(--color-text-dark);
     margin: 0;
 
     span {
-        color: $color-text-accent;
+        color: var(--color-text-accent);
         font-style: italic;
     }
 }
@@ -99,11 +124,11 @@ a {
     display: flex;
     align-items: center;
     gap: rem(8px);
-    border: rem(1px) solid $color-buttons-default;
+    border: rem(1px) solid var(--color-buttons-default);
     border-radius: rem(100px);
     transition: $animation-time-app-links;
     padding: 0 rem(20px);
-    color: $color-text-dark;
+    color: var(--color-text-dark);
 
     .btn-app-link__text-wrapper {
         display: flex;
@@ -137,7 +162,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: rem(1px) solid $color-text-light;
+    border: rem(1px) solid var(--color-text-light);
     border-radius: 50%;
     transition: $animation-time-app-links;
 
@@ -180,9 +205,9 @@ a {
     .btn-primary {
         width: fit-content;
         display: block;
-        background-color: $color-text-light;
+        background-color: var(--color-text-light);
         border-radius: rem(100px);
-        color: $color-text-dark;
+        color: var(--color-text-dark);
         padding: rem(20px) rem(78px);
         transition: 0.3s;
         position: relative;
@@ -240,7 +265,7 @@ a {
             content: '';
             width: 100%;
             height: rem(2px);
-            background-color: $color-text-dark;
+            background-color: var(--color-text-dark);
             transform: scale(0);
             transition: $animation-time-links;
             position: absolute;
@@ -252,20 +277,20 @@ a {
     .btn-app-link {
         &:hover {
             background-color: $color-buttons-default;
-            color: $color-text-light;
+            color: var(--color-text-light);
 
             path {
-                fill: $color-text-light;
+                fill: var(--color-text-light);
             }
         }
     }
 
     .social__link {
         &:hover {
-            background-color: $color-text-light;
+            background-color: var(--color-text-light);
 
             path {
-                stroke: $color-text-dark;
+                stroke: var(--color-text-dark);
             }
         }
     }

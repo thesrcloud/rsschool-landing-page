@@ -22,7 +22,7 @@
     align-items: center;
     @extend %reset-button-styles;
     border-radius: 100%;
-    border: rem(1px) solid $color-buttons-default;
+    border: rem(1px) solid var(--color-buttons-default);
     padding: 0;
     transition: $animation-time-slider-button;
 
@@ -40,6 +40,18 @@
 
     &:active {
         transform: scale(0.9);
+    }
+}
+
+body:has(#tb__switcher:checked) {
+    .slider-button path {
+        stroke: var(--color-buttons-default);
+    }
+
+    .slider-button:hover {
+        path {
+            stroke: var(--color-buttons-border);
+        }
     }
 }
 
@@ -105,7 +117,7 @@
     @extend %reset-button-styles;
     width: rem(40px);
     height: rem(4px);
-    background-color: $color-buttons-default;
+    background-color: var(--color-buttons-default);
     border-radius: rem(100px);
     transition: $animation-time-slider-button;
     opacity: 0.4;
@@ -135,10 +147,10 @@
     .slider-button {
         &:hover {
             cursor: pointer;
-            background-color: $color-buttons-default;
+            background-color: var(--color-buttons-default);
 
             path {
-                stroke: $color-text-light;
+                stroke: var(--color-text-light);
             }
         }
 

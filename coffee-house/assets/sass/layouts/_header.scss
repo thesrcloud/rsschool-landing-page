@@ -37,42 +37,75 @@
 
     a {
         @extend %font-property-links;
-        color: $color-text-dark;
+        color: var(--color-text-dark);
+    }
+}
+
+.header__block {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+}
+
+#tb__switcher {
+    display: none;
+}
+
+.header__theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    border: rem(1px) solid var(--color-buttons-default);
+    border-radius: rem(100px);
+    transition: $animation-time-links;
+    padding: rem(4px);
+
+
+    svg {
+        transition: $animation-time-links;
+        border-radius: 100%;
+    }
+
+    path {
+        transition: $animation-time-links;
+    }
+
+    @media (pointer: fine) and (hover: hover) {
+        &:hover {
+
+            svg.night-mode {
+                cursor: pointer;
+                background-color: var(--color-buttons-default);
+
+                path {
+                    fill: var(--color-text-light);
+                }
+            }
+        }
     }
 }
 
 .menu-button {
     @extend %reset-button-styles;
+    display: flex;
+    gap: rem(8px);
+    align-items: flex-start;
     padding: 0;
-    padding-right: rem(28px);
     position: relative;
     @extend %font-property-links;
-    color: $color-text-dark;
+    color: var(--color-text-dark);
     transition: 0.3s;
 
     &::before {
         content: '';
         width: 100%;
         height: rem(2px);
-        background-color: $color-text-dark;
+        background-color: var(--color-text-dark);
         transform: scale(0);
         transition: 0.3s;
         position: absolute;
         bottom: rem(-3px);
         left: 0;
-    }
-
-    &::after {
-        content: '';
-        width: rem(20px);
-        height: rem(20px);
-        display: block;
-        background-image: url('../../assets/icons/coffee-cup.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        right: 0;
     }
 
     &:hover:not(.menu-button_active) {
@@ -91,11 +124,28 @@
     }
 }
 
+
+    body:has(#tb__switcher:checked) {
+    .menu-button path {
+        stroke: var(--color-text-dark) !important;
+    }
+}
+
+    body:has(#tb__switcher:checked) {
+    .logo__wrapper {
+        filter: invert(1);
+    }
+
+    .day-bg {
+        fill: none !important;
+    }
+}
+
 .header__burger-button {
     @extend %reset-button-styles;
     width: rem(44px);
     height: rem(44px);
-    border: rem(1px) solid $color-buttons-default;
+    border: rem(1px) solid var(--color-buttons-default);
     border-radius: 100%;
     position: relative;
     transition: $animation-time-links;
@@ -104,7 +154,7 @@
         content: '';
         width: rem(16px);
         height: rem(2px);
-        background-color: $color-text-dark;
+        background-color: var(--color-text-dark);
         position: absolute;
 
         transition: $animation-time-links;
@@ -116,7 +166,7 @@
         content: '';
         width: rem(16px);
         height: rem(2px);
-        background-color: $color-text-dark;
+        background-color: var(--color-text-dark);
         transition: $animation-time-links;
         position: absolute;
         top: rem(24px);

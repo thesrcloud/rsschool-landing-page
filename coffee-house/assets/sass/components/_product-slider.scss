@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     gap: rem(8px);
-    border: rem(1px) solid $color-buttons-border;
+    border: rem(1px) solid var(--color-buttons-border);
     border-radius: rem(100px);
     transition: $animation-time-slider-button;
     padding: rem(8) rem(16px) rem(8px) rem(8px);
@@ -27,7 +27,7 @@
     .pr-slider__button-logo {
         width: rem(30px);
         height: rem(30px);
-        background-color: $color-buttons-border;
+        background-color: var(--color-buttons-border);
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 100%;
@@ -46,13 +46,14 @@
         }
     }
 
+
     &.pr-slider__button_active {
-        background-color: $color-buttons-default;
-        border-color: $color-buttons-default;
-        color: $color-text-light;
+        background-color: var(--color-buttons-default);
+        border-color: var(--color-buttons-default);
+        color: var(--color-text-light);
 
         .pr-slider__button-logo {
-            background-color: $color-text-light;
+            background-color: var(--color-text-light);
         }
     }
 
@@ -90,7 +91,7 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    border: rem(1px) solid $color-buttons-border;
+    border: rem(1px) solid var(--color-buttons-border);
     border-radius: rem(40px);
     overflow: hidden;
     transition: $animation-time-images;
@@ -135,12 +136,12 @@
 
         &:hover:not(.pr-slider__button_active) {
             cursor: pointer;
-            background-color: $color-buttons-default;
-            border-color: $color-buttons-default;
-            color: $color-text-light;
+            background-color: var(--color-buttons-default);
+            border-color: var(--color-buttons-default);
+            color: var(--color-text-light);
 
             .pr-slider__button-logo {
-                background-color: $color-text-light;
+                background-color: var(--color-text-light);
             }
         }
 
@@ -150,7 +151,7 @@
 
         &:hover {
             cursor: pointer;
-            // box-shadow: 1px 3px 5px $color-buttons-default;
+            // box-shadow: 1px 3px 5px var(--color-buttons-default);
 
             img {
                 transform: scale(100%);
@@ -190,7 +191,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-color: $color-buttons-default;
+        border-color: var(--color-buttons-default);
     }
 }
 

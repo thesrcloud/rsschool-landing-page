@@ -24,7 +24,7 @@
 .card__description {
     @extend %font-property-links;
     font-weight: 400;
-    color: $color-text-light;
+    color: var(--color-text-light);
     margin: 0;
 }
 
@@ -34,7 +34,7 @@
     }
 
     .card__description {
-        text-shadow: rem(1px) rem(1px) rem(1px) $color-text-dark;
+        text-shadow: rem(1px) rem(1px) rem(1px) var(--color-text-dark);
     }
 }
 

@@ -7,7 +7,7 @@
     min-height: rem(450px);
     display: flex;
     justify-content: space-between;
-    background-color: $color-buttons-default;
+    background-color: var(--bg-container);
     border-radius: rem(40px);
     padding: rem(100px);
 }
@@ -28,7 +28,7 @@
 }
 
 .footer__title {
-    color: $color-text-light;
+    color: var(--color-text-light);
 }
 
 .footer__right-block {
@@ -38,7 +38,7 @@
 }
 
 .footer__contacts-title {
-    color: $color-text-light;
+    color: var(--color-text-light);
     margin-top: rem(33px);
     margin-bottom: rem(27px);
 }
@@ -47,7 +47,7 @@
     transition: 0.3s;
 
     &::after {
-        background-color: $color-text-light;
+        background-color: var(--color-text-light);
     }
 }
 
@@ -56,8 +56,20 @@
     gap: rem(8px);
     font-size: rem(16px);
     line-height: 150%;
-    color: $color-text-light;
+    color: var(--color-text-light);
     padding-bottom: rem(4px);
+}
+
+body:has(#tb__switcher:checked) {
+    .social__link path {
+        stroke: var(--color-buttons-default);
+    }
+
+    .social__link:hover {
+        path {
+            stroke: var(--color-buttons-border);
+        }
+    }
 }
 
 @media (max-width: 1420px) {
