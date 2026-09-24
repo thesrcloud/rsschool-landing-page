@@ -1,0 +1,40 @@
+@use '../abstracts/' as *;
+
+.enjoy {
+    background-color: $text-inverse;
+
+}
+
+.enjoy__wrapper {
+    width: rem(1360px);
+    height: rem(644px);
+    background: url('../images/img-hero.webp') no-repeat center / cover;
+    border-radius: rem(40px);
+    padding: rem(100px);
+    margin: 0 auto;
+}
+
+.enjoy__content {
+    width: rem(530px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+    color: $text-inverse;
+}
+
+.enjoy__title {
+    @extend %heading-1;
+    margin: 0;
+    color: inherit;
+
+    span {
+        font-style: italic;
+        color: $text-accent;
+    }
+}
+
+.enjoy__description {
+    letter-spacing: rem(0.15px);
+    color: $text-inverse;
+    margin: 0;
+}

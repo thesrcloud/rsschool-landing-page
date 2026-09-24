@@ -362,6 +362,14 @@ template {
   color: inherit;
 }
 
+.enjoy__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 4.5rem;
+  line-height: 105%;
+  color: #403F3D;
+}
+
 .nav__list .nav__link, .header__menu-link {
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -370,6 +378,15 @@ template {
   color: #403F3D;
 }
 
+@media (max-width: 380px) {
+  .enjoy__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 2.625rem;
+    line-height: 115%;
+    color: #403F3D;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -464,6 +481,42 @@ body {
   .header__theme-switcher:hover svg.night-mode path {
     fill: #E1D4C9;
   }
+}
+
+.enjoy {
+  background-color: #E1D4C9;
+}
+
+.enjoy__wrapper {
+  width: 85rem;
+  height: 40.25rem;
+  background: url("../images/img-hero.webp") no-repeat center/cover;
+  border-radius: 2.5rem;
+  padding: 6.25rem;
+  margin: 0 auto;
+}
+
+.enjoy__content {
+  width: 33.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  color: #E1D4C9;
+}
+
+.enjoy__title {
+  margin: 0;
+  color: inherit;
+}
+.enjoy__title span {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.enjoy__description {
+  letter-spacing: 0.009375rem;
+  color: #E1D4C9;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
