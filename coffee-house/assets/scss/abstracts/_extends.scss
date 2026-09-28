@@ -19,7 +19,7 @@
     font-weight: 600;
     font-size: rem(72px);
     line-height: 105%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 %heading--accent {
@@ -31,7 +31,7 @@
     font-weight: 600;
     font-size: rem(60px);
     line-height: 125%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 %heading-3 {
@@ -39,7 +39,7 @@
     font-weight: 600;
     font-size: rem(24px);
     line-height: 125%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 %caption {
@@ -47,7 +47,7 @@
     font-weight: 600;
     font-size: rem(10px);
     line-height: 140%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 %link-button-styles {
@@ -55,7 +55,7 @@
     font-weight: 600;
     font-size: rem(16px);
     line-height: 150%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 %burger-link {
@@ -63,7 +63,7 @@
     font-weight: 600;
     font-size: rem(32px);
     line-height: 125%;
-    color: $text-primary;
+    color: var(--text-primary);
 }
 
 @media (max-width: 380px) {
@@ -72,7 +72,7 @@
         font-weight: 600;
         font-size: rem(42px);
         line-height: 115%;
-        color: $text-primary;
+        color: var(--text-primary);
     }
 
     %heading-2 {
@@ -80,6 +80,6 @@
         font-weight: 600;
         font-size: rem(32px);
         line-height: 125%;
-        color: $text-primary;
+        color: var(--text-primary);
     }
 }

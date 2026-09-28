@@ -2,7 +2,7 @@
 
 .header {
     display: flex;
-    background-color: $text-inverse;
+    background-color: var(--bg-page);
     padding: rem(20px) 0;
 }
 
@@ -10,6 +10,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header__logo {
+    @extend %reset-link-styles;
+    display: block;
+    width: rem(100px);
+    height: rem(60px);
+    background-image: url('../images/logo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .nav__list {
@@ -25,11 +35,28 @@
         border-bottom: rem(2px) solid transparent;
         transition: $hover-time;
         padding-bottom: rem(2px);
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: rem(2px);
+            background-color: var(--text-primary);
+            position: absolute;
+            left: 0;
+            bottom: rem(-2px);
+            transition: $hover-time;
+            transform: scale(0);
+        }
 
         @media (pointer: fine) and (hover: hover) {
             &:hover {
-                border-color: $text-primary;
+                &::after {
+                    content: '';
+                    transform: scale(1);
+                }
             }
+
         }
     }
 }
@@ -47,12 +74,27 @@
     display: flex;
     align-items: flex-start;
     gap: rem(8px);
-    border-bottom: rem(2px) solid transparent;
     transition: $hover-time;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: rem(2px);
+        background-color: var(--text-primary);
+        position: absolute;
+        left: 0;
+        bottom: rem(-2px);
+        transition: $hover-time;
+        transform: scale(0);
+    }
 
     @media (pointer: fine) and (hover: hover) {
         &:hover {
-            border-color: $text-primary;
+            &::after {
+                content: '';
+                transform: scale(1);
+            }
         }
     }
 }
@@ -61,18 +103,22 @@
     display: flex;
     align-items: center;
     gap: rem(8px);
-    border: rem(1px) solid $border-primary;
+    border: rem(1px) solid var(--border-primary);
     border-radius: rem(100px);
     transition: $hover-time;
     padding: rem(4px);
 
-    input {
-        display: none;
-    }
-
     svg {
         transition: $hover-time;
         border-radius: 100%;
+    }
+
+    svg.day-mode {
+        background-color: var(--text-accent);
+    }
+
+    svg.night-mode {
+        background-color: initial;
     }
 
     path {
@@ -81,13 +127,56 @@
 
     @media (pointer: fine) and (hover: hover) {
         &:hover {
+            cursor: pointer;
 
             svg.night-mode {
-                cursor: pointer;
-                background-color: $dark-border-primary;
+                background-color: var(--border-inverse);
 
                 path {
-                    fill: $text-inverse;
+                    fill: var(--text-inverse);
+                }
+            }
+        }
+    }
+}
+
+
+body:has(#tb__switcher:checked) {
+    .header__logo {
+        @extend %reset-link-styles;
+        background-image: url('../images/logo-dark-mode.svg')
+    }
+
+    .header__menu-link svg path {
+        stroke: var(--text-primary);
+    }
+
+    .header__theme-switcher {
+
+        svg.day-mode {
+            background-color: initial;
+        }
+
+        svg.night-mode {
+            background-color: var(--text-accent);
+        }
+
+        path {
+            transition: $hover-time;
+            fill: var(--text-primary);
+        }
+
+        svg.day-mode {}
+
+        @media (pointer: fine) and (hover: hover) {
+            &:hover {
+
+                svg.day-mode {
+                    background-color: var(--border-primary);
+
+                    path {
+                        // fill: var(--text-primary);
+                    }
                 }
             }
         }

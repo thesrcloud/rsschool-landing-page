@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .enjoy {
-    background-color: $text-inverse;
+    background-color: var(--bg-page);
 
 }
 
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     gap: rem(40px);
-    color: $text-inverse;
+    color: var(--text-inverse);
 }
 
 .enjoy__title {
@@ -29,12 +29,51 @@
 
     span {
         font-style: italic;
-        color: $text-accent;
+        color: var(--text-accent);
     }
 }
 
 .enjoy__description {
     letter-spacing: rem(0.15px);
-    color: $text-inverse;
+    color: var(--text-inverse);
     margin: 0;
+}
+
+.enjoy__link {
+    @extend %reset-link-styles;
+    @extend %link-button-styles;
+    max-width: rem(200px);
+    display: flex;
+    gap: rem(8px);
+    align-items: center;
+    background: var(--bg-page);
+    border-radius: rem(100px);
+    padding: rem(20px) rem(78px);
+    transition: $hover-time;
+
+    svg {
+        display: none;
+        transform: scale(0);
+        transition: $hover-time;
+    }
+
+    &:hover {
+        padding: rem(20px) rem(calc(92px - 28px)) rem(20px) rem(64px);
+
+        svg {
+            display: block;
+            transform: scale(1);
+
+        }
+
+        path {
+            stroke: var(--text-primary);
+        }
+    }
+}
+
+body:has(#tb__switcher:checked) {
+    .enjoy__link {
+        box-shadow: 0 0 rem(5px) var(--text-inverse);
+    }
 }
