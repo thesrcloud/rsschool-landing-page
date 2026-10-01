@@ -1,0 +1,78 @@
+@keyframes show-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes show-out {
+    from {
+        display: block;
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes rotate-item {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(40deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes show-from-right {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes move-to-right {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -100%;
+    }
+}
+
+@keyframes get-line {
+    from {
+        translate: -100%;
+    }
+
+    to {
+        translate: 0%;
+    }
+}
+
+.rotate-item {
+    animation: rotate-item $animation-time-slider-button linear;
+}
+
+.show-from-right {
+    animation: show-from-right $animation-time-blocks linear;
+}
+
+.move-to-right {
+    animation: show-from-right $animation-time-blocks reverse;
+}

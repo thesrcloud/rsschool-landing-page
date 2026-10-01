@@ -1,0 +1,17 @@
+// *Text:
+
+%font-property-links {
+    font-family: $font-group-1;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+// *Buttons:
+
+%reset-button-styles {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
